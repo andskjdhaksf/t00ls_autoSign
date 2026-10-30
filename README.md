@@ -44,6 +44,7 @@ pip install requests execjs
 
 ## 使用方法
 
+
 ### 1. 创建日志目录
 
 ```bash
@@ -61,14 +62,17 @@ python3 autoSign_t00ls.py <account> <password> <questionid> <answer>
 ```bash
 python3 autoSign_t00ls.py my_user123 my_password123 2 hello_world
 ```
-
+### 4.定时启动
+```bash
+0 9 * * * /usr/bin/python3 /root/autoSign/auto_sign.py > /root/autoSign/run_log.txt
+```
 其中：
 
 - `account`：账号
 - `password`：密码
 - `questionid`：安全问题 ID
 - `answer`：安全问题答案
-
+建议配合crontab一起使用
 ## 参数说明
 
 | 参数 | 说明 | 示例 |
@@ -106,6 +110,8 @@ python3 autoSign_t00ls.py my_user123 my_password123 2 hello_world
 [*]2026-10-30 12:00:00,签到成功
 [*]2026-10-30 12:00:00,已经签到了
 ```
+## 签到日志截图
+![alt text](image.png)
 
 ## 注意事项
 
